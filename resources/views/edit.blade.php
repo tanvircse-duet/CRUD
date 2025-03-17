@@ -19,7 +19,7 @@
     @endif
         <div class="d-flex justify-content-between">
             <div class="">
-            <a class="btn btn-success" href="/create">Edit</a>
+
             </div>
             <div class="">
             <a class="btn btn-primary" href="/test">Back to Home</a>

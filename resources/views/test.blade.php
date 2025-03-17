@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   </head>
   <body>
     <div class=" container p-3 bg-success-subtle text-dark">
         <div class="d-flex justify-content-between">
             <div class="">
-            <a href="/home">HOME</a>
-
             </div>
             <div class="">
             <a class="btn btn-primary" href="/create">Add New Post</a>
@@ -42,8 +41,10 @@
                     @endif
                 </td>
                 <td class="text-center align-middle">
-                  <a href="{{route('edit',$post->id)}}" class="btn btn-warning btn-sm">Edit</a>
+                <a href="{{ route('edit', $post->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i> Edit</a>
+                <a href="{{ route('delete', $post->id) }}" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i> Delete</a>
                 </td>
+                
             </tr>
             @endforeach
         </tbody>

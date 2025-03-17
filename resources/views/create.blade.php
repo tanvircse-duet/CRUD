@@ -19,9 +19,6 @@
     @endif
         <div class="d-flex justify-content-between">
             <div class="">
-            <a class="btn btn-success" href="/create">Add New</a>
-            </div>
-            <div class="">
             <a class="btn btn-primary" href="/test">Back to Home</a>
             </div>
         </div>

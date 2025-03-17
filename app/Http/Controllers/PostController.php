@@ -45,7 +45,7 @@ class PostController extends Controller
         $data = Post::find($id);
         $data->name = $request->name;
         $data->description = $request->description;
-        
+
         if ($request->hasFile('image')) {
         $image = $request->file('image');
         $image_name = time().'.'.$image->getClientOriginalExtension();
@@ -55,6 +55,11 @@ class PostController extends Controller
         $data->save();
         return redirect("/create")->with("success","Post Updated Successfully");
         
+    }
+    public function deleteData($id){
+        $data = Post::find($id);
+        $data->delete();
+        return redirect("/test")->with("success","Post Deleted Successfully"); 
     }
 
 
