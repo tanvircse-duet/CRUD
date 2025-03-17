@@ -20,24 +20,29 @@
         <table class="table table-bordered mt-5">
           <thead>
             <tr>
-              <th scope="col">Id</th>
-              <th scope="col">Name</th>
-              <th scope="col">Description</th>
-              <th scope="col">Image</th>
+              <th scope="col" class="text-center align-middle">Id</th>
+              <th scope="col"class="text-center align-middle">Name</th>
+              <th scope="col" class="text-center align-middle">Description</th>
+              <th scope="col" class="text-center align-middle">Image</th>
+              <th scope="col" class="text-center align-middle">Action</th>
             </tr>
           </thead>
           <tbody>
             @foreach($posts as $post)
             <tr>
-                <th scope="row">{{ $post->id }}</th>
-                <td>{{ $post->Name }}</td>
-                <td>{{ $post->Description }}</td>
-                <td>
+                <th scope="row" class="text-center align-middle">{{ $post->id }}</th>
+                <td class="text-center align-middle">{{ $post->Name }}</td>
+                <td class="text-center align-middle">{{ $post->Description }}</td>
+                <td class="text-center align-middle">
                     @if($post->Image)
-                        <img src="Images/{{ $post->Image }}" alt="Post Image" style="max-width: 100px;">
+                    <img src="{{ asset($post->Image) }}" width="80px" alt="Post Image" style="max-width: 100px;">
+
                     @else
                         No Image
                     @endif
+                </td>
+                <td class="text-center align-middle">
+                  <a href="{{route('edit',$post->id)}}" class="btn btn-warning btn-sm">Edit</a>
                 </td>
             </tr>
             @endforeach
